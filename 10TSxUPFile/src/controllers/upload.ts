@@ -13,7 +13,6 @@ export async function uploadFile(req: Request, res: Response) {
             return;
         }
         const profile = req.file.filename;
-        console.log(user.id)
 
         const updateProfile = await userUpload(user.id, profile)
 

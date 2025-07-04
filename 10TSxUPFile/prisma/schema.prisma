@@ -14,4 +14,15 @@ model User {
   password String
   profile  String
   role     String @default("user")
+  Product  Product[]
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+  name String
+  price Int
+  stock Int
+  userid Int
+  pic String
+  user User @relation(fields: [userid], references: [id], onDelete: Cascade)
 }

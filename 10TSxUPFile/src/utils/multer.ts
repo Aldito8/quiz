@@ -15,8 +15,8 @@ const fileFilter = (req: any, file: any, cb: FileFilterCallback) => {
         return cb(new Error('Invalid or missing file name'));
     }
 
-    const ext = path.extname(file.originalname).toLowerCase().slice(1);
-    const allowedExtensions = ['jpg', 'png', 'jpeg'];
+    const ext = path.extname(file.originalname).toLowerCase().slice(1)
+    const allowedExtensions = ['jpg', 'png', 'jpeg']
     if (allowedExtensions.includes(ext)) {
         cb(null, true)
     } else {
